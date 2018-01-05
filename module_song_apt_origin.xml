@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_song_apt_origin" default="compile.module.song_apt_origin">
+  <dirname property="module.song_apt_origin.basedir" file="${ant.file.module_song_apt_origin}"/>
+  
+  <property name="module.jdk.home.song_apt_origin" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.song_apt_origin" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.song_apt_origin" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.song_apt_origin" value="-encoding x-windows-949 -source 8 ${compiler.args}"/>
+  
+  <property name="song_apt_origin.output.dir" value="${module.song_apt_origin.basedir}/out/production/song_apt_origin"/>
+  <property name="song_apt_origin.testoutput.dir" value="${module.song_apt_origin.basedir}/out/test/song_apt_origin"/>
+  
+  <path id="song_apt_origin.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="song_apt_origin.module.production.classpath">
+    <path refid="${module.jdk.classpath.song_apt_origin}"/>
+    <path refid="library.song_apt_origin.classpath"/>
+  </path>
+  
+  <path id="song_apt_origin.runtime.production.module.classpath">
+    <pathelement location="${song_apt_origin.output.dir}"/>
+    <path refid="library.song_apt_origin.classpath"/>
+  </path>
+  
+  <path id="song_apt_origin.module.classpath">
+    <path refid="${module.jdk.classpath.song_apt_origin}"/>
+    <pathelement location="${song_apt_origin.output.dir}"/>
+    <path refid="library.song_apt_origin.classpath"/>
+  </path>
+  
+  <path id="song_apt_origin.runtime.module.classpath">
+    <pathelement location="${song_apt_origin.testoutput.dir}"/>
+    <pathelement location="${song_apt_origin.output.dir}"/>
+    <path refid="library.song_apt_origin.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.song_apt_origin">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.song_apt_origin">
+    <patternset refid="excluded.from.module.song_apt_origin"/>
+  </patternset>
+  
+  <path id="song_apt_origin.module.sourcepath">
+    <dirset dir="${module.song_apt_origin.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.song_apt_origin" depends="compile.module.song_apt_origin.production,compile.module.song_apt_origin.tests" description="Compile module song_apt_origin"/>
+  
+  <target name="compile.module.song_apt_origin.production" depends="register.custom.compilers" description="Compile module song_apt_origin; production classes">
+    <mkdir dir="${song_apt_origin.output.dir}"/>
+    <javac2 destdir="${song_apt_origin.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.song_apt_origin}/javac">
+      <compilerarg line="${compiler.args.song_apt_origin}"/>
+      <bootclasspath refid="song_apt_origin.module.bootclasspath"/>
+      <classpath refid="song_apt_origin.module.production.classpath"/>
+      <src refid="song_apt_origin.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.song_apt_origin"/>
+    </javac2>
+    
+    <copy todir="${song_apt_origin.output.dir}">
+      <fileset dir="${module.song_apt_origin.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.song_apt_origin.tests" depends="register.custom.compilers,compile.module.song_apt_origin.production" description="compile module song_apt_origin; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.song_apt_origin" description="cleanup module">
+    <delete dir="${song_apt_origin.output.dir}"/>
+    <delete dir="${song_apt_origin.testoutput.dir}"/>
+  </target>
+</project>

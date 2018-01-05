@@ -1,0 +1,126 @@
+<?import drill.data.TBL_APT?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.collections.*?>
+<?import drill.data.*?>
+
+<GridPane alignment="CENTER" hgap="10.0" vgap="10.0"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="drill.controller.ScreenAPTtableController">
+
+    <gridLinesVisible>true</gridLinesVisible> <!--display the grid lines for debugging -->
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+
+    <Label style="-fx-font: NORMAL 20 Tahoma;" text="Adbanced Persistent Threat - Training"
+           GridPane.columnIndex="0" GridPane.rowIndex="0">
+    </Label>
+
+    <TableView fx:id="tableView"
+               GridPane.columnIndex="0" GridPane.rowIndex="1"
+               GridPane.columnSpan="2"  GridPane.rowSpan="2">
+
+        <!-- //TBL_APT(SEQ , ACTDATE, IPADDR, PHTYPE, PHNUM, ACTDIV,ETC, GROUPTYPE, USERAGENT) -->
+        <columns>
+            <TableColumn fx:id="SEQColumn" text="SEQ" prefWidth="50">
+                <cellValueFactory>
+                    <PropertyValueFactory property="SEQ" />
+                </cellValueFactory>
+                <cellFactory>
+                    <FormattedTableCellFactory alignment="center">
+                    </FormattedTableCellFactory>
+                </cellFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="ACTDATEColumn" text="ACTDATE" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="ACTDATE" />
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="IPADDRColumn" text="IPADDR" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="IPADDR" />
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="PHTYPEColumn" text="PHTYPE" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="PHTYPE" />
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="PHNUMColumn" text="PHNUM" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="PHNUM" />
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="ACTDIVColumn" text="ACTDIV" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="ACTDIV" />
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="ETCColumn" text="ETC" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="ETC" />
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="GROUPTYPEColumn" text="GROUPTYPE" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="GROUPTYPE" />
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="USERAGENTColumn" text="USERAGENT" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="USERAGENT" />
+                </cellValueFactory>
+            </TableColumn>
+
+        </columns>
+
+
+
+        <sortOrder>
+
+            <fx:reference source="ACTDATEColumn" sortType="DESCENDING" />
+        </sortOrder>
+
+    </TableView>
+
+    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="0"
+          GridPane.rowIndex="4">
+        <TextField fx:id="SEQField" promptText="Sequence"
+                   prefWidth="90"/>
+        <TextField fx:id="ACTDATEField" promptText="Act Date"
+                   prefWidth="90"/>
+        <TextField fx:id="IPADDRField" promptText="IP Addr"
+                   prefWidth="150"/>
+
+        <TextField fx:id="PHTYPEField" promptText="Phone Type"
+                   prefWidth="90"/>
+        <TextField fx:id="PHNUMField" promptText="Phone Number"
+                   prefWidth="90"/>
+        <TextField fx:id="ACTDIVField" promptText="Act Div"
+                   prefWidth="150"/>
+
+        <TextField fx:id="ETCField" promptText="ETC content"
+                   prefWidth="90"/>
+        <TextField fx:id="GROUPTYPEField" promptText="Group Type"
+                   prefWidth="90"/>
+        <TextField fx:id="USERAGENTField" promptText="User Agent"
+                   prefWidth="150"/>
+
+
+        <Button text="Add" onAction="#addAPTTable"/>
+        <Button text="Query" onAction="#queryAPTTable"/>
+
+    </HBox>
+
+</GridPane>

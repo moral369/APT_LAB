@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import java.net.URL?>
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="drill.controller.DetailPieChartsController">
+
+    <children>
+      <BorderPane prefHeight="900.0" prefWidth="1600.0"
+                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+                  >
+
+          <stylesheets>
+              <URL value="@../css/FontStyle.css" />
+
+          </stylesheets>
+
+
+         <bottom>
+            <ListView fx:id="listview_group_detail_log" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets top="10.0" />
+               </BorderPane.margin>
+            </ListView>
+         </bottom>
+         <center>
+                         <TableView fx:id="fx_tbl_group_victims" prefHeight="800.0" prefWidth="510.0" BorderPane.alignment="CENTER">
+                             <columns>
+                                 <TableColumn fx:id="UserCodeColumn" prefWidth="20.0" text="식별코드" />
+                                 <TableColumn fx:id="NameColumn" prefWidth="30.0" text="이름" />
+                                 <TableColumn fx:id="PhoneNoColumn" prefWidth="50.0" text="전화번호" />
+                                 <TableColumn fx:id="AccCountColumn" minWidth="0.0" prefWidth="30.0" text="접근" />
+                                 <!--<TableColumn fx:id="DownCountColumn" minWidth="0.0" prefWidth="50.0" text="다운" />
+                                 <TableColumn fx:id="InstallCountColumn" minWidth="0.0" prefWidth="50.0" text="설치" />-->
+                                 <TableColumn fx:id="ExecCountColumn" prefWidth="30.0" text="실행" />
+                                 <TableColumn fx:id="PermitCountColumn" minWidth="0.0" prefWidth="30.0" text="권한획득" />
+                                 <TableColumn fx:id="BlankColumn" prefWidth="50.0" text="비고" />
+                             </columns>
+
+                             <columnResizePolicy>
+                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                             </columnResizePolicy>
+
+                         </TableView>
+         </center>
+
+         <right>
+            <TableView fx:id="fx_tbl_victims_detail" prefHeight="800.0" prefWidth="520.0" BorderPane.alignment="CENTER">
+               <columns>
+                  <TableColumn fx:id="ActionDateColumn" prefWidth="150.0" text="시간" />
+                  <TableColumn fx:id="ActionStringColumn" prefWidth="400.0" text="행위" />
+
+               </columns>
+
+            </TableView>
+         </right>
+
+         <left>
+                      <VBox prefHeight="714.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+                          <children>
+                              <HBox alignment="center">
+                                 <children>
+   
+   
+                     <Text fx:id="title_group_name" text="그룹사명" textAlignment="CENTER" wrappingWidth="200.0" />
+                                 </children>
+                              </HBox>
+                             <PieChart fx:id="detail_pie" stylesheets="@../css/DrilldownChart.css" />
+
+                              <AnchorPane prefHeight="172.0" prefWidth="1280.0">
+                                  <children>
+                                      <Button fx:id="btn_back" layoutX="10.0" layoutY="55.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="86.0" prefWidth="200.0" text="Back" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="55.0" />
+                                  </children>
+                              </AnchorPane>
+                  <GridPane prefHeight="300.0" prefWidth="200.0"
+                            styleClass="label_root">
+                      <stylesheets>
+                          <URL value="@../css/FontStyle.css" />
+
+                      </stylesheets>
+
+                     <children>
+
+                            <Text fx:id="summary_text" text="내용요약" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+
+                            <Label text="총인원:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                         <TextField fx:id="fx_total_man" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+
+
+                         <Label text="무반응:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                         <TextField fx:id="fx_safety_man" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                         <Label text="접속인원:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                         <TextField fx:id="fx_urlacc_man" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                            <Label text="실행인원:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                         <TextField fx:id="fx_exec_man" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                         <Label text="관리자권한획득:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                         <TextField fx:id="fx_permit_man" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                         <!--  <Label text="총접속:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                         <TextField fx:id="fx_urlacc_count" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                         <Label text="총실행:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                         <TextField fx:id="fx_exec_count" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                         <Label text="중복접속인원:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                         <TextField fx:id="fx_many_times_urlacc_man" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+                            <Label text="중복실행인원:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                         <TextField fx:id="fx_many_times_exec_man" GridPane.columnIndex="1" GridPane.rowIndex="8" />-->
+
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                  </GridPane>
+                          </children>
+                      </VBox>
+         </left>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </BorderPane>
+    </children>
+</AnchorPane>

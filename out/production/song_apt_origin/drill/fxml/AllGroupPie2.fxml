@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="ransomMain"
+            prefHeight="900.0" prefWidth="1600.0"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="drill.controller.AllGroupPieController">
+    <children>
+        <GridPane prefHeight="900.0" prefWidth="1600.0" stylesheets="@../css/DrilldownChart.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+                  <gridLinesVisible>true</gridLinesVisible> <!--display the grid lines for debugging -->
+
+
+
+                            <children>
+                                <AnchorPane prefHeight="250.0" prefWidth="400.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+               <children>
+                                        <PieChart fx:id="main_pie_metrix00" onMouseClicked="#OnMouseClicked_00" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+                                </AnchorPane>
+
+                                <AnchorPane prefHeight="250.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                    <children>
+                                        <PieChart fx:id="main_pie_metrix01" onMouseClicked="#OnMouseClicked_01" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+
+                                <AnchorPane prefHeight="250.0" prefWidth="400.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                    <children>
+                                        <PieChart fx:id="main_pie_metrix02" onMouseClicked="#OnMouseClicked_02" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+
+
+                                <AnchorPane prefHeight="250.0" prefWidth="400.0" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                                    <children>
+                                        <PieChart fx:id="main_pie_metrix03" onMouseClicked="#OnMouseClicked_03" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+
+                                <AnchorPane prefHeight="250.0" prefWidth="400.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                    <children>
+                                        <PieChart fx:id="main_pie_metrix10" onMouseClicked="#OnMouseClicked_10" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+
+                                <AnchorPane prefHeight="250.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                        <PieChart fx:id="main_pie_metrix11" onMouseClicked="#OnMouseClicked_11" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+
+                                <AnchorPane prefHeight="250.0" prefWidth="400.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <children>
+                                        <PieChart fx:id="main_pie_metrix12" onMouseClicked="#OnMouseClicked_12" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+
+                                <AnchorPane prefHeight="250.0" prefWidth="400.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                    <children>
+                                        <PieChart fx:id="main_pie_metrix13" onMouseClicked="#OnMouseClicked_13" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+
+                                <AnchorPane prefHeight="250.0" prefWidth="400.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                    <children>
+                                        <PieChart fx:id="main_pie_metrix20" onMouseClicked="#OnMouseClicked_20" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+
+                                <AnchorPane prefHeight="250.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <children>
+                                        <PieChart fx:id="main_pie_metrix21" onMouseClicked="#OnMouseClicked_21" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+
+                                <AnchorPane prefHeight="250.0" prefWidth="400.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                    <children>
+                                        <PieChart fx:id="main_pie_metrix22" onMouseClicked="#OnMouseClicked_22" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+
+                                <AnchorPane prefHeight="250.0" prefWidth="400.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                    <children>
+                                        <PieChart fx:id="main_pie_metrix23" onMouseClicked="#OnMouseClicked_23" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+
+                                <AnchorPane prefHeight="150.0" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="4">
+                                    <children>
+                                        <ListView fx:id="listviewtemp" prefHeight="150.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+
+                                    </children>
+                                </AnchorPane>
+
+                            </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+                        </GridPane>
+
+    </children>
+
+</AnchorPane>

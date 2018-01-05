@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+          fx:controller="drill.controller.SettingScreenController">
+    <padding><Insets bottom="10" left="25" right="25" top="25" /></padding>
+   <children>
+   
+       <Text text="Training Participants" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="0" />
+   
+       <Label text="SFG :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+       <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="idSFGField" />
+   
+       <Label text="SHB :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+       <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="idSHBField" />
+   
+       <Label text="SHC :" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+       <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="idSHCField" />
+   
+       <Label text="SHI :" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+       <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="idSHIField" />
+   
+       <Label text="SHL :" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+       <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="idSHLField" />
+   
+       <Label text="BNP :" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+       <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" fx:id="idBNPField" />
+   
+       <Label text="CAP :" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+       <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" fx:id="idCAPField" />
+   
+       <Label text="JJB :" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+       <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" fx:id="idJJBField" />
+   
+       <Label text="SAV :" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+       <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" fx:id="idSAVField" />
+   
+       <Label text="SDS :" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+       <TextField GridPane.columnIndex="1" GridPane.rowIndex="10" fx:id="idSDSField" />
+   
+       <Label text="TAS :" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+       <TextField GridPane.columnIndex="1" GridPane.rowIndex="11" fx:id="idTASField" />
+   
+       <Label text="SCI :" GridPane.columnIndex="0" GridPane.rowIndex="12" />
+       <TextField GridPane.columnIndex="1" GridPane.rowIndex="12" fx:id="idSCIField" />
+   
+       <Label text="ETC :" GridPane.columnIndex="0" GridPane.rowIndex="13" />
+       <TextField GridPane.columnIndex="1" GridPane.rowIndex="13" fx:id="idETCField" />
+   
+       <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="14">
+      <children>
+          <Button onAction="#showButtonAction"  text="Show" />
+          <Button onAction="#applyButtonAction" text="Apply" />
+          <Button onAction="#exitButtonAction"  text="Exit"  mnemonicParsing="false"/>
+      </children>
+       </HBox>
+   
+       <Text fx:id="actiontarget" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+   </children>
+
+
+
+</GridPane>

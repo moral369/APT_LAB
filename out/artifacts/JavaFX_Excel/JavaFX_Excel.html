@@ -1,0 +1,43 @@
+<html><head>
+  <SCRIPT src="http://java.com/js/dtjava.js"></SCRIPT>
+<script>
+    function launchApplication(jnlpfile) {
+        dtjava.launch(            {
+                url : 'JavaFX_Excel.jnlp'
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+        return false;
+    }
+</script>
+
+<script>
+    function javafxEmbed_JavaFX_Excel_id() {
+        dtjava.embed(
+            {
+                id : 'JavaFX_Excel_id',
+                url : 'JavaFX_Excel.jnlp',
+                placeholder : 'javafx-app-placeholder',
+                width : 600,
+                height : 400
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+    }
+    <!-- Embed FX application into web page once page is loaded -->
+    dtjava.addOnloadCallback(javafxEmbed_JavaFX_Excel_id);
+</script>
+
+</head><body>
+<h2>Test page for <b>JavaFX_Excel</b></h2>
+  <b>Webstart:</b> <a href='JavaFX_Excel.jnlp' onclick="return launchApplication('JavaFX_Excel.jnlp');">click to launch this app as webstart</a><br><hr><br>
+
+  <!-- Applet will be inserted here -->
+  <div id='javafx-app-placeholder'></div>
+</body></html>
